@@ -1,0 +1,83 @@
+<html>
+    <head>
+       <title>Aula HTML - Formulario</title>     
+    </head>
+
+    <body>
+        
+      <form method="get" action="teste2.html">
+       
+         <p>
+          <label for="iNome"> Nome:</label>
+          <input type="text" id="iNome" name="nNome" maxlength="20" value="" placeholder="Digite seu nome">
+         </p>
+
+         <p>
+          <label for="iEmail">Email:</label>
+          <input type="email" id="iEmail" name="nNome" required maxlength="40" placeholder="Digite seu email">
+         </p>
+
+         <p>
+            <label for="iSenha">Senha:</label>
+            <input type="password" id="iSenha" name="nSenha" minlength="8" placeholder="Digite sua senha">
+           </p> 
+
+         <p>
+            <label for="iDtNasc">Dt. Nasc:</label>
+            <input type="date" id="iDtNasc" name="nDtNasc">
+            <!-- <input type="time" id="iDtNasc"> -->
+            <!-- <input type="datetime-local" id="iDtNasc"> -->
+         </p>
+
+         <p>
+            <label for="iIdade">Idade:</label>
+            <input type="number" id="iIdade" name="nIdade" min="0" max="18" step=".01" >
+         </p>
+
+         <p>
+            <input type="radio" id="iManha" name="nTurno" value="M" checked>
+            <label for="iManha">Manhã</label>
+
+            <input type="radio" id="iTarde"  name="nTurno" value="T">
+            <label for="iTarde">Tarde</label>
+
+            <input type="radio" id="iNoite"  name="nTurno" value="N">
+            <label for="iNoite">Noite</label>
+
+         </p>
+         <p>
+
+            <input type="checkbox" id="iAtivo" name="nAtivo" checked>
+            <label for="iAtivo"> Usuário Ativo</label>
+         </p>
+
+         <p>
+            <label for="iObs">Obs.:</label>
+            <textarea for="iObs"  name="nObs" placeholder="Digite aqui"></textarea>
+         </p>
+
+         <p>
+
+            <label for="iCurso">Curso:</label>
+            <select id="iCurso" name="nCurso" required>
+                <option value="">Selecione...</option> 
+                <option value="1">Des. de Sistemas</option>
+                <option value="2">Mecatrônica</option>
+            </select>
+         </p>
+          
+         <p> 
+          <label for="iFoto">Foto:</label>
+          <input type="file" accept=".html" id="iFoto" name="nFoto">
+         </p>
+
+         <p>
+          <input type="reset" value="Limpar">
+          <input type="submit" value="Salvar">
+         </p>
+         
+
+      </form>
+
+    </body>
+</html>

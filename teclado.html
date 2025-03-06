@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Teclado Virtual</h3>
+
+    <input type="text" name="nResult" id="iResult">
+    <input type="button" name="nBtn" id="iBtn" value="Limpar" onclick="limpar()">
+
+    <p><input type="button" value="A" name="nA" id="iA" onclick="btnA()">
+        <input type="button" value="B" name="nB" id="iB" onclick="btnB()">
+        <input type="button" value="C" name="nC" id="iC" onclick="btnC()">
+        <input type="button" value="1" name="n1" id="i1" onclick="btn1()">
+        <input type="button" value="2" name="n2" id="i2" onclick="btn2()">
+        <input type="button" value="3" name="n3" id="i3" onclick="btn3()">
+    </p>
+
+    <script>
+        function limpar(){
+            var n1 = document.getElementById("iResult").value="";
+        }
+
+        function btnA(){
+            var n1 = document.getElementById("iResult").value;
+            var soma = n1+"A"
+            document.getElementById("iResult").value = soma;
+        }
+            function btnB(){
+            var n1 = document.getElementById("iResult").value;
+            var soma = n1+"B"
+            document.getElementById("iResult").value = soma;
+        }
+            function btnC(){
+            var n1 = document.getElementById("iResult").value;
+            var soma = n1+"C"
+            document.getElementById("iResult").value = soma;
+        }
+            function btn1(){
+            var n1 = document.getElementById("iResult").value;
+            var soma = n1+"1"
+            document.getElementById("iResult").value = soma;
+        }
+            function btn2(){
+            var n1 = document.getElementById("iResult").value;
+            var soma = n1+"2"
+            document.getElementById("iResult").value = soma;
+        }
+            function btn3(){
+            var n1 = document.getElementById("iResult").value;
+            var soma = n1+"3"
+            document.getElementById("iResult").value = soma;
+        }
+    </script>
+</body>
+</html>

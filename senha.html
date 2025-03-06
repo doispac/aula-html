@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <h3 id="iH">Verificar Senha</h3>
+
+    
+    <p>
+        <label for="iSenha">Senha: </label>
+        <input type="password" id="iSenha" name="nSenha">
+    </p>
+
+    <p>
+        <label for="iRepete">Repetir: </label>
+        <input type="password" id="iRepete" name="nRepete">
+    </p>
+
+    <p>
+        <input type="button" value="Validar" id="iBotao" onclick="valida()">
+        <input type="button" value="Limpar" id="iBotao2" onclick="limpar()">
+    </p>
+
+    <p>
+        <input type="text" id="iResultado" name="nResultado">
+    </p>
+
+
+
+    <script>
+        function valida(){
+            var senha = document.getElementById("iSenha").value;
+            var repetir = document.getElementById("iRepete").value;
+            if(senha == repetir){
+            document.getElementById("iResultado").value= "Iguais";
+            }else{
+            document.getElementById("iResultado").value= "Difetentes";
+            }
+        }
+
+        function limpar(){
+            var n1 = document.getElementById("iSenha").value="";
+            var n2 = document.getElementById("iRepete").value="";
+            var n3 = document.getElementById("iResultado").value="";
+        }
+    </script>
+    
+</body>
+</html>

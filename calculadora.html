@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h3 id="iH">Calculadora DOM</h3>
+
+    <p>
+        <label for="iValor1">1º Valor: </label>
+        <input type="number" id="iValor1" name="nValor1">
+    </p>
+
+    <p>
+        <label for="iValor2">2º Valor: </label>
+        <input type="number" id="iValor2" name="nValor2">
+    </p>
+
+    <p>
+        <input type="button" value="+" id="iBotao" onclick="soma()">
+        <input type="button" value="-" id="iBotao2" onclick="sub()">
+        <input type="button" value="*" id="iBotao3" onclick="vezes()">
+        <input type="button" value="/" id="iBotao4" onclick="divisao()">
+    </p>
+ 
+    <p>
+        <label for="iResult">Resultado: </label>
+        <input type="number" id="iResult" name="nResult">
+    </p>
+
+    <script>
+        function soma(){
+            var n1 = parseInt(document.getElementById("iValor1").value);
+            var n2 = parseInt(document.getElementById("iValor2").value);
+
+            var soma = n1+n2;
+            document.getElementById("iResult").value= soma;
+
+        }
+
+        function sub(){
+            var n1 = parseInt(document.getElementById("iValor1").value);
+            var n2 = parseInt(document.getElementById("iValor2").value);
+
+            var subtracao = n1-n2;
+            document.getElementById("iResult").value= subtracao;
+
+        }
+
+        function vezes(){
+            var n1 = parseInt(document.getElementById("iValor1").value);
+            var n2 = parseInt(document.getElementById("iValor2").value);
+
+            var mult = n1*n2;
+            document.getElementById("iResult").value= mult;
+
+        }
+
+        function divisao(){
+            var n1 = parseInt(document.getElementById("iValor1").value);
+            var n2 = parseInt(document.getElementById("iValor2").value);
+
+            var div = n1/n2;
+            document.getElementById("iResult").value= div;
+
+        }
+    </script>
+</body>
+</html>

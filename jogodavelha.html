@@ -3,51 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JOGO DA VELHA</title>
 </head>
 <body>
-    <h3>Jogo da Velha</h3>
-    <h4 id="vX">Vitorias do X:</h4>
-    <h4 id="vO">Vitorias do O:</h4>
+    <h1>JOGO DA VELHA</h1>
+    <h3 id="jog1">Vitória do X: 0</h3>
+    <h3 id="jog2">Vitória do O: 0</h3>
 
-    <table id="iTb" border="2">
+    <table border="2">
         <tr>
-            <td id="1" onclick="">&nbsp;&nbsp;&nbsp;</td>
-            <td id="2">&nbsp;&nbsp;&nbsp;</td>
-            <td id="3">&nbsp;&nbsp;&nbsp;</td>
+            <td id="1" onclick="clicar('1')">&nbsp;&nbsp;&nbsp;</td>
+            <td id="2" onclick="clicar('2')">&nbsp;&nbsp;&nbsp;</td>
+            <td id="3" onclick="clicar('3')">&nbsp;&nbsp;&nbsp;</td>
         </tr>
-
         <tr>
-            <td id="4">&nbsp;&nbsp;&nbsp;</td>
-            <td id="5">&nbsp;&nbsp;&nbsp;</td>
-            <td id="6">&nbsp;&nbsp;&nbsp;</td>
+            <td id="4" onclick="clicar('4')">&nbsp;&nbsp;&nbsp;</td>
+            <td id="5" onclick="clicar('5')">&nbsp;&nbsp;&nbsp;</td>
+            <td id="6" onclick="clicar('6')">&nbsp;&nbsp;&nbsp;</td>
         </tr>
-
         <tr>
-            <td id="7">&nbsp;&nbsp;&nbsp;</td>
-            <td id="8">&nbsp;&nbsp;&nbsp;</td>
-            <td id="9">&nbsp;&nbsp;&nbsp;</td>
+            <td id="7" onclick="clicar('7')">&nbsp;&nbsp;&nbsp;</td>
+            <td id="8" onclick="clicar('8')">&nbsp;&nbsp;&nbsp;</td>
+            <td id="9" onclick="clicar('9')">&nbsp;&nbsp;&nbsp;</td>
         </tr>
     </table>
 
     <p>
-        <input type="button" value="Revanche" id="iBtn" onclick="limpar()"> 
+        <input type="button" id="iRevanche" value="Revanche" onclick="limpar()">
     </p>
-    
+
     <script>
-        function limpar(){
-            document.getElementById("1").value="";
-            document.getElementById("2").value="";
-            document.getElementById("3").value="";
-            document.getElementById("4").value="";
-            document.getElementById("5").value="";
-            document.getElementById("6").value="";
-            document.getElementById("7").value="";
-            document.getElementById("8").value="";
-            document.getElementById("9").value="";
+        var jog1 = 0;
+        var jog2 = 0;
+        var jogo = 0;
+
+        function clicar(p1) {
+            if (document.getElementById(p1).innerHTML === "&nbsp;&nbsp;&nbsp;") {
+                if (jogo % 2 === 0) {
+                    document.getElementById(p1).innerHTML = "X";
+                    if (verificarVitoria("X")) {
+                        jog1++;
+                        atualizarPlacar();
+                        return;
+                    }
+                } else {
+                    document.getElementById(p1).innerHTML = "O";
+                    if (verificarVitoria("O")) {
+                        jog2++;                        
+                        atualizarPlacar();
+                        return;
+                    }
+                }
+                jogo++;
+            }
         }
 
+        function verificarVitoria(jogador) {
+           
+            if (document.getElementById(1).innerHTML == jogador && document.getElementById(2).innerHTML == jogador && 
+            document.getElementById(3).innerHTML == jogador) return true;
+            if (document.getElementById(4).innerHTML == jogador && document.getElementById(5).innerHTML == jogador && 
+            document.getElementById(6).innerHTML == jogador) return true;
+            if (document.getElementById(7).innerHTML === jogador && document.getElementById(8).innerHTML == jogador && 
+            document.getElementById(9).innerHTML == jogador) return true;
+            
+            
+            if (document.getElementById(1).innerHTML == jogador && document.getElementById(4).innerHTML == jogador && 
+            document.getElementById(7).innerHTML == jogador) return true;
+            if (document.getElementById(2).innerHTML == jogador && document.getElementById(5).innerHTML == jogador && 
+            document.getElementById(8).innerHTML == jogador) return true;
+            if (document.getElementById(3).innerHTML == jogador && document.getElementById(6).innerHTML == jogador && 
+            document.getElementById(9).innerHTML == jogador) return true;
+
+            
+            if (document.getElementById(1).innerHTML == jogador && document.getElementById(5).innerHTML == jogador && 
+            document.getElementById(9).innerHTML == jogador) return true;
+            if (document.getElementById(3).innerHTML == jogador && document.getElementById(5).innerHTML == jogador && 
+            document.getElementById(7).innerHTML == jogador) return true;
+
+            return false;
+        }
+
+        function limpar() {
+            document.getElementById("1").innerHTML = "&nbsp;&nbsp;&nbsp;";
+            document.getElementById("2").innerHTML = "&nbsp;&nbsp;&nbsp;";
+            document.getElementById("3").innerHTML = "&nbsp;&nbsp;&nbsp;";
+            document.getElementById("4").innerHTML = "&nbsp;&nbsp;&nbsp;";
+            document.getElementById("5").innerHTML = "&nbsp;&nbsp;&nbsp;";
+            document.getElementById("6").innerHTML = "&nbsp;&nbsp;&nbsp;";
+            document.getElementById("7").innerHTML = "&nbsp;&nbsp;&nbsp;";
+            document.getElementById("8").innerHTML = "&nbsp;&nbsp;&nbsp;";
+            document.getElementById("9").innerHTML = "&nbsp;&nbsp;&nbsp;";
+            jogo = 0;
+        }
+
+        function atualizarPlacar() {
+            document.getElementById("jog1").innerHTML = "Vitória do X: " + jog1;
+            document.getElementById("jog2").innerHTML = "Vitória do O: " + jog2;
+        }
     </script>
-    
 </body>
 </html>
